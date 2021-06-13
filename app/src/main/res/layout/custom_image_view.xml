@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:src="@drawable/ic_baseline_cancel_24"
+        android:id="@+id/ivRemoveIvCreated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+       android:layout_alignEnd="@id/IvCreated"
+        android:src="@drawable/ic_baseline_remove_circle_24"
+        android:id="@+id/ivRemoveSelectionView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:layout_marginEnd="10dp"
+        android:scaleType="fitXY"
+        android:id="@+id/IvCreated"
+        android:layout_marginStart="10dp"
+        android:layout_below="@id/ivRemoveIvCreated"
+        android:layout_width="200dp"
+        android:layout_height="200dp"/>
+    <ImageView
+        android:id="@+id/ivCreatedEnlarge"
+        android:src="@drawable/enlarge"
+        android:layout_below="@id/IvCreated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/clMemeCreateFragment"
+        >
+
+        <LinearLayout
+            android:id="@+id/llPaintViewContainer"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <muss.stein.memefactory.paint.PaintView
+                android:scaleType="fitXY"
+                android:id="@+id/paintViewCanvas"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginHorizontal="5dp"
+            app:layout_constraintBottom_toTopOf="@id/cardViewBottomMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_marginHorizontal="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:src="@drawable/eraser"
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/ivClearDraw"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+                <ImageView
+                    android:src="@drawable/ic_baseline_save_24"
+                    android:layout_alignParentEnd="true"
+                    android:id="@+id/ivSaveDraw"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+
+            app:layout_constraintBottom_toTopOf="@id/cvBrushSize"
+            android:layout_marginBottom="5dp"
+            android:layout_marginHorizontal="5dp"
+            android:id="@+id/cardViewBottomMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivDrawPen"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/ic_baseline_draw_24" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginHorizontal="5dp"
+            android:id="@+id/cvBrushSize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/ic_baseline_brush_24"
+                    android:id="@+id/brushSize1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5">
+                </Space>
+                <ImageView
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/ic_baseline_brush_24"
+                    android:id="@+id/brushSize2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5">
+                </Space>
+                <ImageView
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/ic_baseline_brush_24"
+                    android:id="@+id/brushSize3"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"/>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5">
+                </Space>
+                <ImageView
+                    android:background="@drawable/ic_baseline_brush_24"
+                    android:id="@+id/brushSize4"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

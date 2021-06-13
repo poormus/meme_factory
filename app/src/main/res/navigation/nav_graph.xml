@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/memeTemplateFragment">
+
+    <fragment
+        android:id="@+id/memeTemplateFragment"
+        android:name="muss.stein.memefactory.ui.MemeTemplateFragment"
+        android:label="Templates"
+        tools:layout="@layout/fragment_meme_template">
+        <action
+            android:id="@+id/action_memeTemplateFragment_to_memeCreateFragment"
+            app:destination="@id/memeCreateFragment" />
+        <action
+            android:id="@+id/action_memeTemplateFragment_to_memeCreateByTextFragment"
+            app:destination="@id/memeCreateByTextFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/memeCreateFragment"
+        android:name="muss.stein.memefactory.ui.MemeCreateFragment"
+        android:label="Draw"
+        tools:layout="@layout/fragment_meme_create">
+        <argument
+            android:name="resource"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        tools:layout="@layout/dialog_meme_create_options"
+        android:id="@+id/dialogMemeCreateOptions"
+        android:name="muss.stein.memefactory.ui.dialog.DialogMemeCreateOptions"
+        android:label="DialogMemeCreateOptions">
+    <action
+        android:id="@+id/action_memeTemplateFragment_to_memeCreateFragment"
+        app:destination="@id/memeCreateFragment" />
+        <action
+            android:id="@+id/action_memeTemplateFragment_to_memeCreateByTextFragment"
+            app:destination="@id/memeCreateByTextFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photosSavedToInternalStorage"
+        android:name="muss.stein.memefactory.ui.internalstorage.PhotosSavedToInternalStorage"
+        android:label="Saved Memes" />
+    <fragment
+        android:id="@+id/memeCreateByTextFragment"
+        android:name="muss.stein.memefactory.ui.MemeCreateByTextFragment"
+        android:label="Add Text">
+        <argument
+            android:name="resource"
+            app:argType="integer" />
+        <argument
+            android:name="uri"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
+</navigation>
